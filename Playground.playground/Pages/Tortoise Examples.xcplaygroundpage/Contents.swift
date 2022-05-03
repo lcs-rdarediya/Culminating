@@ -35,6 +35,9 @@ PlaygroundPage.current.liveView = canvas
 To use the Tortoise abstraction, just create an instance of the Tortoise class, and provide it with a canvas object that is should draw upon.
 */
 
+// draw a grid
+canvas.drawAxes(withScale: true, by: 20, color: .black)
+
 // Create a turtle that will draw upon the canvas
 let turtle = Tortoise(drawingUpon: canvas)
 
@@ -246,63 +249,134 @@ let turtle = Tortoise(drawingUpon: canvas)
 //Command-Shift-Return
 
 
-
 // where is the turtle?
 turtle.currentPosition()
 
 //Set Scale
 let scale = 20
 
+//fucntions
+func drawArrow() {
+    
+    // where are we?
+    turtle.drawSelf()
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+
+    //start drawing turtle
+    turtle.penDown()
+    turtle.forward(steps: 3 * scale)
+
+    //draw the turtle
+    turtle.drawSelf()
+
+    //draw upward line
+    turtle.left(by: 90)
+    turtle.forward(steps: Int(1.5) * scale)
+    turtle.drawSelf()
+
+    //draw side line
+
+    let diagonal = sqrt(20*20+20*20)
+    turtle.right(by: 135)
+    turtle.forward(steps: Int(diagonal) * 2 )
+    turtle.drawSelf()
+
+    //draw second side line
+    turtle.right(by: 90)
+    turtle.forward(steps: Int(diagonal) * 2 )
+    turtle.drawSelf()
+
+    //draw downward line
+    turtle.right(by: 135)
+    turtle.forward(steps: Int(1.5) * scale)
+    turtle.drawSelf()
+
+    //draw second line
+
+    turtle.left(by: 90)
+    turtle.forward(steps: 3 * scale)
+    turtle.drawSelf()
+
+    // draw bottom line
+
+    turtle.right(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.right(by: 90)
+
+    // where are we?
+    turtle.drawSelf()
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+
+    //correct for posistion
+
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.penDown()
+
+
+    //where we are
+    turtle.drawSelf()
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+}
+
+
 // move more to the middle
+
 turtle.penUp()
-turtle.forward(steps: 5 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 5 * scale)
-turtle.right(by: 90)
-turtle.drawSelf()
-
-//Draw a line
-turtle.penDown()
-turtle.forward(steps: 3 * scale)
-
-//draw the turtle
-turtle.drawSelf()
-
-//draw upward line
-turtle.left(by: 90)
-turtle.forward(steps: Int(1.5) * scale)
-turtle.drawSelf()
-
-//draw side line
-
-let diagonal = sqrt(20*20+20*20)
-turtle.right(by: 135)
-turtle.forward(steps: Int(diagonal) * 2 )
-turtle.drawSelf()
-
-//draw second side line
-turtle.right(by: 90)
-turtle.forward(steps: Int(diagonal) * 2 )
-turtle.drawSelf()
-
-//draw downward line
-turtle.right(by: 135)
-turtle.forward(steps: Int(1.5) * scale)
-turtle.drawSelf()
-
-//draw second line
-
 turtle.left(by: 90)
 turtle.forward(steps: 3 * scale)
-turtle.drawSelf()
-
-// draw bottom line
-
 turtle.right(by: 90)
-turtle.forward(steps: 2 * scale)
-turtle.right(by: 90)
-turtle.drawSelf()
+turtle.currentPosition()
 
+
+
+//3. use a loop
+
+for _ in 1...5 {
+    //1. draw an arrow using the function
+    drawArrow()
+
+    //2. get into position to draaw the next arrow
+
+    turtle.penUp()
+    turtle.forward(steps: 5 * scale)
+    turtle.penDown()
+    
+}
+
+turtle.currentPosition()
+turtle.currentHeading()
+// get into postion to draw the second line
+
+turtle.penUp()
+turtle.right(by: 180)
+turtle.forward(steps: 25 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 4 * scale)
+turtle.forward(steps: 1)
+turtle.right(by: 90)
+turtle.currentPosition()
+turtle.currentHeading()
+
+for _ in 1...5 {
+    //1. draw an arrow using the function
+    drawArrow()
+
+    //2. get into position to draaw the next arrow
+
+    turtle.penUp()
+    turtle.forward(steps: 5 * scale)
+    turtle.penDown()
+    
+}
 
 
 
