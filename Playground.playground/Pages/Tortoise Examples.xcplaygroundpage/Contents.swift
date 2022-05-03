@@ -338,48 +338,67 @@ turtle.currentPosition()
 
 
 
-//3. use a loop
 
-for _ in 1...5 {
-    //1. draw an arrow using the function
-    drawArrow()
 
-    //2. get into position to draaw the next arrow
+// use a loop
 
-    turtle.penUp()
-    turtle.forward(steps: 5 * scale)
-    turtle.penDown()
-    
-}
+for _ in 1...4 {
+    //3. use a loop
 
-turtle.currentPosition()
-turtle.currentHeading()
-// get into postion to draw the second line
+    for _ in 1...5 {
+        //1. draw an arrow using the function
+        drawArrow()
 
-turtle.penUp()
-turtle.right(by: 180)
-turtle.forward(steps: 25 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 4 * scale)
-turtle.forward(steps: 1)
-turtle.right(by: 90)
-turtle.currentPosition()
-turtle.currentHeading()
+        //2. get into position to draaw the next arrow
 
-for _ in 1...5 {
-    //1. draw an arrow using the function
-    drawArrow()
+        turtle.penUp()
+        turtle.forward(steps: 5 * scale)
+        turtle.penDown()
+        
+    }
 
-    //2. get into position to draaw the next arrow
+    // get into postion to draw the second line
 
     turtle.penUp()
-    turtle.forward(steps: 5 * scale)
-    turtle.penDown()
+    turtle.right(by: 180)
+    turtle.forward(steps: 25 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 4 * scale)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90)
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+    for _ in 1...5 {
+        //1. draw an arrow using the function
+        drawArrow()
+
+        //2. get into position to draaw the next arrow
+
+        turtle.penUp()
+        turtle.forward(steps: 5 * scale)
+        turtle.penDown()
+        
+
+    }
+
+    // get into postion to draw the second line
+
+    turtle.penUp()
+    turtle.right(by: 180)
+    turtle.forward(steps: 25 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 4 * scale)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90)
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+    
     
 }
-
-
-
+    
+    
 
 /*:
  ## Show the Assistant Editor
