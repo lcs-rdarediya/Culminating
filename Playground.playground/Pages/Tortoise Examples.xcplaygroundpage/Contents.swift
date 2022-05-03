@@ -21,6 +21,7 @@ let preferredHeight = 500
 import Cocoa
 import PlaygroundSupport
 import CanvasGraphics
+import AppKit
 
 // Create canvas
 let canvas = Canvas(width: preferredWidth, height: preferredHeight)
@@ -299,7 +300,9 @@ turtle.drawSelf()
 
 turtle.right(by: 90)
 turtle.forward(steps: 2 * scale)
+turtle.right(by: 90)
 turtle.drawSelf()
+
 
 
 
