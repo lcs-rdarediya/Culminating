@@ -328,7 +328,7 @@ func drawArrow() {
 }
 
 
-// move more to the middle
+// move more to the position needed
 
 turtle.penUp()
 turtle.left(by: 90)
@@ -349,7 +349,7 @@ for _ in 1...4 {
         //1. draw an arrow using the function
         drawArrow()
 
-        //2. get into position to draaw the next arrow
+        //2. get into position to draw the next arrow
 
         turtle.penUp()
         turtle.forward(steps: 5 * scale)
@@ -382,7 +382,7 @@ for _ in 1...4 {
 
     }
 
-    // get into postion to draw the second line
+    // get into postion to draw the third line
 
     turtle.penUp()
     turtle.right(by: 180)
