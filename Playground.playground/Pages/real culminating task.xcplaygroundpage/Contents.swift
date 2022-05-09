@@ -4,8 +4,8 @@
  
  Set the size of your desired canvas by adjusting the constants on lines 7 and 8.
  */
-let preferredWidth = 600
-let preferredHeight = 600
+let preferredWidth = 400
+let preferredHeight = 400
 /*:
  ## Required code
  
@@ -52,6 +52,8 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+canvas.highPerformance = true
+
 // Set scale
 let scale = 20
 
@@ -70,37 +72,125 @@ turtle.currentPosition()
 // fill the turtle in color
 turtle.setFillColor(to: .black)
 
-// start drawing turtle
-turtle.penDown()
-turtle.beginFill()
+
+// cross function
+func DrawCross() {
+    // start drawing cross
+    turtle.penDown()
+    turtle.beginFill()
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.endFill()
+    turtle.penUp()
+    turtle.currentPosition()
+    turtle.left(by: 360)
+    turtle.currentHeading()
+}
+
+// draw a cross usinf the function
+DrawCross()
+
+// get into position to draw the next cross
+
+turtle.forward(steps: 3 * scale)
+turtle.right(by: 90)
 turtle.forward(steps: 1 * scale)
 turtle.left(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.left(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
-turtle.right(by: 90)
-turtle.endFill()
-turtle.penUp()
+turtle.currentPosition()
+turtle.currentHeading()
+
+// line of cross function
+func LineOfCross() {
+    // draw a cross using the function
+    DrawCross()
+
+    // get into position to draw the next cross
+
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.currentPosition()
+}
 
 
+// use a loop
+
+for _ in 1...3{
+    LineOfCross()
+    
+}
+
+//get into position to draw the next line
+
+turtle.left(by: 180)
+turtle.forward(steps: 14 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 8 * scale)
+turtle.right(by: 90)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw second line
+for _ in 1...7{
+    LineOfCross()
+}
+
+//get into position to draw the next line
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 9 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 180)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw line
+for _ in 1...10{
+    LineOfCross()
+}
+
+//get into position to draw the next line
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 12 * scale)
+turtle.right(by: 90)
+turtle.currentHeading()
+turtle.currentPosition()
+//draw line
+for _ in 1...15{
+    LineOfCross()
+}
+
+
+
+
+canvas.highPerformance = false
 
 /*:
  ## Show the Live View

@@ -249,6 +249,7 @@ let turtle = Tortoise(drawingUpon: canvas)
 //Command-Shift-Return
 
 
+canvas.highPerformance = true
 // where is the turtle?
 turtle.currentPosition()
 
@@ -399,7 +400,7 @@ for _ in 1...4 {
 }
     
     
-
+canvas.highPerformance = false
 /*:
  ## Show the Assistant Editor
  Don't see any results?
