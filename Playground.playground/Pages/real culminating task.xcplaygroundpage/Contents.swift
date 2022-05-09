@@ -40,12 +40,9 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
-
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
+
 
 /*:
  ## Add your code
@@ -55,23 +52,55 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
  [Documentation](http://russellgordon.ca/CanvasGraphics/Documentation/) is available.
 
  */
+// Set scale
+let scale = 20
 
-// Begin writing your code below (you can remove the examples shown)
+// where are we?
+turtle.drawSelf()
+turtle.currentPosition()
+turtle.currentHeading()
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+//move to starting position
+turtle.penUp()
+turtle.left(by: 90)
+turtle.forward(steps: 2 * scale)
+turtle.right(by: 90)
+turtle.currentPosition()
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+// fill the turtle in color
+turtle.setFillColor(to: .black)
 
-// Go back to origin
-p.goToOrigin()
+// start drawing turtle
+turtle.penDown()
+turtle.beginFill()
+turtle.forward(steps: 1 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.endFill()
+turtle.penUp()
 
-// Change the pen color
-p.penColor = .red
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
 
 /*:
  ## Show the Live View
