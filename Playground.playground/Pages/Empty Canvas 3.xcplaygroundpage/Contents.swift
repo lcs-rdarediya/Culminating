@@ -40,9 +40,7 @@ PlaygroundPage.current.liveView = canvas
  
  */
 
-// Move the origin from the bottom-left corner of the canvas to it's centre point
-canvas.translate(to: Point(x: canvas.width / 2,
-                           y: canvas.height / 2))
+
 
 // Show a grid
 canvas.drawAxes(withScale: true, by: 20, color: .black)
@@ -56,23 +54,95 @@ canvas.drawAxes(withScale: true, by: 20, color: .black)
 
  */
 
-// Begin writing your code below (you can remove the examples shown)
+canvas.highPerformance = true
+let scale = 20
 
-// Draw a circle, using the canvas object directly
-canvas.drawEllipse(at: Point(x: 100, y: 100), width: 25, height: 25)
+turtle.penUp()
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
 
-// Draw a vertical line, up and to the left
-p.drawTo(dx: -25, dy: 50)
+//first square
 
-// Go back to origin
-p.goToOrigin()
+for _ in 1...3 {
+    for _ in 1...10 { turtle.penDown()
+        turtle.forward(steps: 1 * scale)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1 * scale)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90 )
+        
+    }
+    // go back to starting position
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.currentPosition()
+    turtle.currentHeading()
 
-// Change the pen color
-p.penColor = .red
+    // move to next square
+    turtle.forward(steps: 1 * scale)
+    
+}
 
-// Draw a curve, down and to the right
-p.addArc(radius: 50, angle: -45)
 
+//bottom square
+turtle.right(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 2 * scale)
+turtle.left(by: 180)
+turtle.currentHeading()
+turtle.currentPosition()
+
+for _ in 1...10 { turtle.penDown()
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90 )
+    
+}
+
+
+// go back to starting position
+turtle.penUp()
+turtle.right(by: 90)
+turtle.forward(steps: 20)
+turtle.left(by: 90)
+turtle.currentPosition()
+turtle.currentHeading()
+
+// move to the top square
+turtle.left(by: 90)
+turtle.forward(steps: 2 * scale)
+turtle.right(by: 90)
+
+//top square
+for _ in 1...10 { turtle.penDown()
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1)
+    turtle.left(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1)
+    turtle.right(by: 90 )
+    
+}
+
+
+
+
+
+canvas.highPerformance = false
 /*:
  ## Show the Live View
  Don't see any results?

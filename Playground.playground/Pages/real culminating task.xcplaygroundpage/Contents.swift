@@ -41,7 +41,7 @@ PlaygroundPage.current.liveView = canvas
  */
 
 // Show a grid
-canvas.drawAxes(withScale: true, by: 20, color: .black)
+//canvas.drawAxes(withScale: true, by: 20, color: .black)
 
 
 /*:
@@ -109,7 +109,7 @@ func DrawCross() {
     turtle.currentHeading()
 }
 
-// draw a cross usinf the function
+// draw a cross using the function
 DrawCross()
 
 // get into position to draw the next cross
@@ -170,7 +170,7 @@ turtle.currentHeading()
 turtle.currentPosition()
 
 //draw line
-for _ in 1...10{
+for _ in 1...7{
     LineOfCross()
 }
 
@@ -183,9 +183,72 @@ turtle.right(by: 90)
 turtle.currentHeading()
 turtle.currentPosition()
 //draw line
-for _ in 1...15{
+for _ in 1...8{
     LineOfCross()
 }
+
+turtle.currentHeading()
+turtle.currentPosition()
+
+
+//get into position to draw the next line
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 16 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 2 * scale)
+turtle.right(by: 180)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw line
+for _ in 1...9{
+    LineOfCross()
+}
+
+//get into position to draw the next line
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 19 * scale)
+turtle.left(by: 90)
+turtle.forward(steps: 1 * scale)
+turtle.right(by: 180)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw line
+for _ in 1...9{
+    LineOfCross()
+}
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 21 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 3 * scale)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw line
+for _ in 1...6{
+    LineOfCross()
+}
+
+turtle.goToHome()
+turtle.left(by: 90)
+turtle.forward(steps: 21 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 13 * scale)
+turtle.currentHeading()
+turtle.currentPosition()
+
+//draw line
+for _ in 1...3{
+    LineOfCross()
+}
+
 
 
 
