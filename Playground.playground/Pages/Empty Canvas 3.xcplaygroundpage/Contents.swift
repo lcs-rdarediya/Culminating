@@ -62,9 +62,47 @@ turtle.left(by: 90)
 turtle.forward(steps: 1 * scale)
 turtle.right(by: 90)
 
-//first square
+// cross function
+func DrawCross() {
+    // start drawing cross
+    turtle.penDown()
+    //first square
 
-for _ in 1...3 {
+    for _ in 1...3 {
+        for _ in 1...10 { turtle.penDown()
+            turtle.forward(steps: 1 * scale)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1 * scale)
+            turtle.right(by: 90)
+            turtle.forward(steps: 1)
+            turtle.right(by: 90 )
+            
+        }
+        // go back to starting position
+        turtle.penUp()
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.currentPosition()
+        turtle.currentHeading()
+
+        // move to next square
+        turtle.forward(steps: 1 * scale)
+        
+    }
+
+
+    //bottom square
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.left(by: 180)
+    turtle.currentHeading()
+    turtle.currentPosition()
+
     for _ in 1...10 { turtle.penDown()
         turtle.forward(steps: 1 * scale)
         turtle.left(by: 90)
@@ -76,6 +114,8 @@ for _ in 1...3 {
         turtle.right(by: 90 )
         
     }
+
+
     // go back to starting position
     turtle.penUp()
     turtle.right(by: 90)
@@ -84,62 +124,76 @@ for _ in 1...3 {
     turtle.currentPosition()
     turtle.currentHeading()
 
-    // move to next square
+    // move to the top square
+    turtle.left(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.right(by: 90)
+
+    //top square
+    for _ in 1...10 { turtle.penDown()
+        turtle.forward(steps: 1 * scale)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1 * scale)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90 )
+        
+    }
+    turtle.penUp()
+    turtle.right(by: 90)
     turtle.forward(steps: 1 * scale)
-    
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 180)
+    turtle.currentPosition()
+    turtle.currentHeading()
 }
 
 
-//bottom square
-turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
+// draw a cross using the function
+DrawCross()
+
+// get into position to draw the next cross
+
+turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
 turtle.forward(steps: 2 * scale)
+turtle.left(by: 90)
+turtle.currentPosition()
+turtle.currentHeading()
+
+// line of cross function
+func LineOfCross() {
+    // draw a cross using the function
+    DrawCross()
+
+    // get into position to draw the next cross
+
+    turtle.forward(steps: 3 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.left(by: 90)
+    turtle.currentPosition()
+}
+
+// use a loop
+
+for _ in 1...3{
+    LineOfCross()
+    
+}
+
+//get into position to draw the next line
+
 turtle.left(by: 180)
+turtle.forward(steps: 14 * scale)
+turtle.right(by: 90)
+turtle.forward(steps: 8 * scale)
+turtle.right(by: 90)
 turtle.currentHeading()
 turtle.currentPosition()
-
-for _ in 1...10 { turtle.penDown()
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90 )
-    
-}
-
-
-// go back to starting position
-turtle.penUp()
-turtle.right(by: 90)
-turtle.forward(steps: 20)
-turtle.left(by: 90)
-turtle.currentPosition()
-turtle.currentHeading()
-
-// move to the top square
-turtle.left(by: 90)
-turtle.forward(steps: 2 * scale)
-turtle.right(by: 90)
-
-//top square
-for _ in 1...10 { turtle.penDown()
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1)
-    turtle.right(by: 90 )
-    
-}
-
-
-
 
 
 canvas.highPerformance = false

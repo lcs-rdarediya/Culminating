@@ -65,50 +65,100 @@ turtle.currentHeading()
 //move to starting position
 turtle.penUp()
 turtle.left(by: 90)
-turtle.forward(steps: 2 * scale)
+turtle.forward(steps: 1 * scale)
 turtle.right(by: 90)
 turtle.currentPosition()
 
-// fill the turtle in color
-turtle.setFillColor(to: .black)
 
 
 // cross function
 func DrawCross() {
     // start drawing cross
     turtle.penDown()
-    turtle.beginFill()
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
+    //first square
+
+    for _ in 1...3 {
+        for _ in 1...10 { turtle.penDown()
+            turtle.forward(steps: 1 * scale)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1)
+            turtle.left(by: 90)
+            turtle.forward(steps: 1 * scale)
+            turtle.right(by: 90)
+            turtle.forward(steps: 1)
+            turtle.right(by: 90 )
+            
+        }
+        // go back to starting position
+        turtle.penUp()
+        turtle.right(by: 90)
+        turtle.forward(steps: 20)
+        turtle.left(by: 90)
+        turtle.currentPosition()
+        turtle.currentHeading()
+
+        // move to next square
+        turtle.forward(steps: 1 * scale)
+        
+    }
+
+
+    //bottom square
     turtle.right(by: 90)
     turtle.forward(steps: 1 * scale)
     turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.left(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
-    turtle.right(by: 90)
-    turtle.endFill()
-    turtle.penUp()
+    turtle.forward(steps: 2 * scale)
+    turtle.left(by: 180)
+    turtle.currentHeading()
     turtle.currentPosition()
-    turtle.left(by: 360)
+
+    for _ in 1...10 { turtle.penDown()
+        turtle.forward(steps: 1 * scale)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1 * scale)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90 )
+        
+    }
+
+
+    // go back to starting position
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 20)
+    turtle.left(by: 90)
+    turtle.currentPosition()
+    turtle.currentHeading()
+
+    // move to the top square
+    turtle.left(by: 90)
+    turtle.forward(steps: 2 * scale)
+    turtle.right(by: 90)
+
+    //top square
+    for _ in 1...10 { turtle.penDown()
+        turtle.forward(steps: 1 * scale)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1)
+        turtle.left(by: 90)
+        turtle.forward(steps: 1 * scale)
+        turtle.right(by: 90)
+        turtle.forward(steps: 1)
+        turtle.right(by: 90 )
+        
+    }
+    turtle.penUp()
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.right(by: 90)
+    turtle.forward(steps: 1 * scale)
+    turtle.left(by: 180)
+    turtle.currentPosition()
     turtle.currentHeading()
 }
-
 // draw a cross using the function
 DrawCross()
 
@@ -116,7 +166,7 @@ DrawCross()
 
 turtle.forward(steps: 3 * scale)
 turtle.right(by: 90)
-turtle.forward(steps: 1 * scale)
+turtle.forward(steps: 2 * scale)
 turtle.left(by: 90)
 turtle.currentPosition()
 turtle.currentHeading()
@@ -130,7 +180,7 @@ func LineOfCross() {
 
     turtle.forward(steps: 3 * scale)
     turtle.right(by: 90)
-    turtle.forward(steps: 1 * scale)
+    turtle.forward(steps: 2 * scale)
     turtle.left(by: 90)
     turtle.currentPosition()
 }
@@ -143,7 +193,7 @@ for _ in 1...3{
     
 }
 
-//get into position to draw the next line
+//get into position to draw the second  line
 
 turtle.left(by: 180)
 turtle.forward(steps: 14 * scale)
@@ -158,11 +208,11 @@ for _ in 1...7{
     LineOfCross()
 }
 
-//get into position to draw the next line
+//get into position to draw the third  line
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 9 * scale)
+turtle.forward(steps: 8 * scale)
 turtle.left(by: 90)
 turtle.forward(steps: 1 * scale)
 turtle.right(by: 180)
@@ -174,11 +224,11 @@ for _ in 1...7{
     LineOfCross()
 }
 
-//get into position to draw the next line
+//get into position to draw the fourth line
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 12 * scale)
+turtle.forward(steps: 11 * scale)
 turtle.right(by: 90)
 turtle.currentHeading()
 turtle.currentPosition()
@@ -191,11 +241,11 @@ turtle.currentHeading()
 turtle.currentPosition()
 
 
-//get into position to draw the next line
+//get into position to draw the fifth line
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 16 * scale)
+turtle.forward(steps: 15 * scale)
 turtle.left(by: 90)
 turtle.forward(steps: 2 * scale)
 turtle.right(by: 180)
@@ -207,11 +257,11 @@ for _ in 1...9{
     LineOfCross()
 }
 
-//get into position to draw the next line
+//get into position to draw the sixth line
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 19 * scale)
+turtle.forward(steps: 18 * scale)
 turtle.left(by: 90)
 turtle.forward(steps: 1 * scale)
 turtle.right(by: 180)
@@ -225,7 +275,7 @@ for _ in 1...9{
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 21 * scale)
+turtle.forward(steps: 20 * scale)
 turtle.right(by: 90)
 turtle.forward(steps: 3 * scale)
 turtle.currentHeading()
@@ -238,7 +288,7 @@ for _ in 1...6{
 
 turtle.goToHome()
 turtle.left(by: 90)
-turtle.forward(steps: 21 * scale)
+turtle.forward(steps: 20 * scale)
 turtle.right(by: 90)
 turtle.forward(steps: 13 * scale)
 turtle.currentHeading()
